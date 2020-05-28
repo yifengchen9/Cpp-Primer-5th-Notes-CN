@@ -49,3 +49,9 @@
 [第18章 用于大型程序的工具](https://github.com/czs108/Cpp-Primer-5th-Note-CN/tree/master/Chapter-18%20Tools%20for%20Large%20Programs)
 
 [第19章 特殊工具与技术](https://github.com/czs108/Cpp-Primer-5th-Note-CN/tree/master/Chapter-19%20Specialized%20Tools%20and%20Techniques)
+
+## 关于
+
+***GitHub***：https://github.com/czs108/
+
+***E-Mail***：chenzs108@outlook.com
