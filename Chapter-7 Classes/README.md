@@ -443,7 +443,7 @@ public:
     {
         cursor = width * height;  // which height? the parameter
     }
-    
+
 private:
     pos cursor = 0;
     pos height = 0, width = 0;
@@ -454,7 +454,7 @@ private:
 
 ```c++
 // bad practice: names local to member functions shouldn't hide member names
-void Screen::dummy_fcn(pos height) 
+void Screen::dummy_fcn(pos height)
 {
     cursor = width * this->height;  // member height
     // alternative way to indicate the member
@@ -462,7 +462,7 @@ void Screen::dummy_fcn(pos height)
 }
 
 // good practice: don't use a member name for a parameter or other local variable
-void Screen::dummy_fcn(pos ht) 
+void Screen::dummy_fcn(pos ht)
 {
     cursor = width * height;  // member height
 }
@@ -506,7 +506,7 @@ public:
     // defines the default constructor as well as one that takes a string argument
     Sales_data(std::string s = ""): bookNo(s) { }
     // remaining constructors unchanged
-    Sales_data(std::string s, unsigned cnt, double rev): 
+    Sales_data(std::string s, unsigned cnt, double rev):
         bookNo(s), units_sold(cnt), revenue(rev*cnt) { }
     Sales_data(std::istream &is) { read(is, *this); }
     // remaining members as before
@@ -549,7 +549,7 @@ string null_book = "9-999-99999-9";
 item.combine(null_book);
 ```
 
-编译器只会自动执行一步类型转换。 
+编译器只会自动执行一步类型转换。
 
 ```c++
 // error: requires two user-defined conversions:
@@ -647,7 +647,7 @@ public:
     void calculate() { amount += amount * interestRate; }
     static double rate() { return interestRate; }
     static void rate(double);
-    
+
 private:
     std::string owner;
     double amount;

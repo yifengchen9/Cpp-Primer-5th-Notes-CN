@@ -113,7 +113,7 @@ public:
     void push_back(const T &t) { data->push_back(t); }
     void push_back(T &&t) { data->push_back(std::move(t)); }
     // ...
-    
+
 private:
     std::shared_ptr<std::vector<T>> data;
 };

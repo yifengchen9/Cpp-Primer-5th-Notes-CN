@@ -75,7 +75,7 @@ vector<int> vi;     // initially empty
 vi = {0,1,2,3,4,5,6,7,8,9};     // vi now has ten elements, values 0 through 9
 ```
 
-赋值运算符满足右结合律。 
+赋值运算符满足右结合律。
 
 ```c++
 int ival, jval;
@@ -211,7 +211,7 @@ cast-name<type>(expression);
 - `const_cast`只能改变运算对象的底层`const`，不能改变表达式的类型。同时也只有`const_cast`能改变表达式的常量属性。`const_cast`常常用于函数重载。
 - `reinterpret_cast`通常为运算对象的位模式提供底层上的重新解释。
 
-早期版本的C++语言中，显式类型转换包含两种形式： 
+早期版本的C++语言中，显式类型转换包含两种形式：
 
 ```c++
 type (expression);    // function-style cast notation

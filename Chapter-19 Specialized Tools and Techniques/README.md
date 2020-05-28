@@ -135,7 +135,7 @@ dynamic_cast<type&&>(e)
   ```c++
   void f(const Base &b)
   {
-      try 
+      try
       {
           const Derived &d = dynamic_cast<const Derived&>(b);
           // use the Derived object to which b referred
@@ -343,8 +343,8 @@ int j = peppers::red;   // error: scoped enumerations are not implicitly convert
 
 ```c++
 enum intValues : unsigned long long
-{ 
-    /*...*/ 
+{
+    /*...*/
 };
 ```
 
@@ -376,7 +376,7 @@ public:
     char get_cursor() const { return contents[cursor]; }
     char get() const;
     char get(pos ht, pos wd) const;
-    
+
 private:
     std::string contents;
     pos cursor;
@@ -496,7 +496,7 @@ class TextQuery
 };
 
 // we're defining the QueryResult class that is a member of class TextQuery
-class TextQuery::QueryResult 
+class TextQuery::QueryResult
 {
     /*...*/
 };
@@ -580,7 +580,7 @@ void foo(int val)
     static int si;
     enum Loc { a = 1024, b };
     // Bar is local to foo
-    struct Bar 
+    struct Bar
     {
         Loc locVal;    // ok: uses a local type name
         int barVal;
@@ -608,7 +608,7 @@ void foo()
     public:
         class Nested;   // declares class Nested
     };
-    
+
     // definition of Nested
     class Bar::Nested
     {

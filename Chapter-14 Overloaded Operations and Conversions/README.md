@@ -283,7 +283,7 @@ public:
     {
         os << s << sep;
     }
-    
+
 private:
     ostream &os;   // stream on which to write
     char sep;      // character to print after each output
@@ -296,7 +296,7 @@ printer(s);     // prints s followed by a space on cout
 如果类定义了调用运算符，则该类的对象被称作函数对象（function object），函数对象常常作为泛型算法的实参。
 
 ```c++
-for_each(vs.begin(), vs.end(), PrintString(cerr, '\n'));    
+for_each(vs.begin(), vs.end(), PrintString(cerr, '\n'));
 ```
 
 ### lambda是函数对象（Lambdas Are Function Objects）
@@ -335,10 +335,10 @@ public:
     SizeComp(size_t n): sz(n) { }   // parameter for each captured variable
     // call operator with the same return type, parameters, and body as the lambda
     bool operator()(const string &s) const
-    { 
-        return s.size() >= sz; 
+    {
+        return s.size() >= sz;
     }
-    
+
 private:
     size_t sz;   // a data member for each variable captured by value
 };

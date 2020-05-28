@@ -166,7 +166,7 @@ cout << f() << endl;    // prints 42
 
 ```c++
 // get an iterator to the first element whose size() is >= sz
-auto wc = find_if(words.begin(), words.end(), 
+auto wc = find_if(words.begin(), words.end(),
                     [sz](const string &a) { return a.size() >= sz; });
 ```
 

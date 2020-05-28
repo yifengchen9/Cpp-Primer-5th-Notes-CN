@@ -500,7 +500,7 @@ namespace A
             return i;   // returns B::i
         }
     }   // namespace B is closed and names in it are no longer visible
-    
+
     int f2()
     {
         return j;   // error: j is not defined
@@ -713,7 +713,7 @@ class Panda : public Bear, public Raccoon, public Endangered { /* ... */ };
 ```c++
 Bear::Bear(std::string name, bool onExhibit)
     : ZooAnimal(name, onExhibit, "Bear") { }
-    
+
 Raccoon::Raccoon(std::string name, bool onExhibit)
     : ZooAnimal(name, onExhibit, "Raccoon") { }
 

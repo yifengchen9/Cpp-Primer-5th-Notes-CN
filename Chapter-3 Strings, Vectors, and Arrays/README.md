@@ -14,7 +14,7 @@ using std::cout;
 
 ## 标准库类型string（Library string Type）
 
-标准库类型`string`表示可变长的字符序列，定义在头文件*string*中。 
+标准库类型`string`表示可变长的字符序列，定义在头文件*string*中。
 
 ### 定义和初始化string对象（Defining and Initializing strings）
 
@@ -22,7 +22,7 @@ using std::cout;
 
 ![3-1](Images/3-1.png)
 
-如果使用等号初始化一个变量，实际上执行的是拷贝初始化（copy initialization），编译器把等号右侧的初始值拷贝到新创建的对象中去。如果不使用等号，则执行的是直接初始化（direct initialization）。 
+如果使用等号初始化一个变量，实际上执行的是拷贝初始化（copy initialization），编译器把等号右侧的初始值拷贝到新创建的对象中去。如果不使用等号，则执行的是直接初始化（direct initialization）。
 
 ### string对象上的操作（Operations on strings）
 
@@ -46,7 +46,7 @@ string s5 = "hello" + ", ";     // error: no string operand
 string s6 = s1 + ", " + "world";    // ok: each + has a string operand
 ```
 
-为了与C兼容，C++语言中的字符串字面值并不是标准库`string`的对象。 
+为了与C兼容，C++语言中的字符串字面值并不是标准库`string`的对象。
 
 ### 处理string对象中的字符（Dealing with the Characters in a string）
 
@@ -119,14 +119,14 @@ for (int i = 0; i != 100; ++i)
 
 ![3-5](Images/3-5.png)
 
-`size`函数返回`vector`对象中元素的个数，返回值是由`vector`定义的`size_type`类型。`vector`对象的类型包含其中元素的类型。 
+`size`函数返回`vector`对象中元素的个数，返回值是由`vector`定义的`size_type`类型。`vector`对象的类型包含其中元素的类型。
 
 ```c++
 vector<int>::size_type  // ok
 vector::size_type       // error
 ```
 
-`vector`和`string`对象的下标运算符只能用来访问已经存在的元素，而不能用来添加元素。 
+`vector`和`string`对象的下标运算符只能用来访问已经存在的元素，而不能用来添加元素。
 
 ```c++
 vector<int> ivec;   // empty vector
@@ -171,9 +171,9 @@ auto it1 = v.begin();   // it1 has type vector<int>::iterator
 auto it2 = cv.begin();  // it2 has type vector<int>::const_iterator
 ```
 
-C++11新增了`cbegin`和`cend`函数，不论`vector`或`string`对象是否为常量，都返回`const_iterator`迭代器。 
+C++11新增了`cbegin`和`cend`函数，不论`vector`或`string`对象是否为常量，都返回`const_iterator`迭代器。
 
-任何可能改变容器对象容量的操作，都会使该对象的迭代器失效。 
+任何可能改变容器对象容量的操作，都会使该对象的迭代器失效。
 
 ### 迭代器运算（Iterator Arithmetic）
 
@@ -181,7 +181,7 @@ C++11新增了`cbegin`和`cend`函数，不论`vector`或`string`对象是否为
 
 ![3-7](Images/3-7.png)
 
-`difference_type`类型用来表示两个迭代器间的距离，这是一种带符号整数类型。 
+`difference_type`类型用来表示两个迭代器间的距离，这是一种带符号整数类型。
 
 ## 数组（Arrays）
 
@@ -208,7 +208,7 @@ string a4[3] = {"hi", "bye"};   // same as a4[] = {"hi", "bye", ""}
 int a5[2] = {0,1,2};    // error: too many initializers
 ```
 
-可以用字符串字面值初始化字符数组，但字符串字面值结尾处的空字符也会一起被拷贝到字符数组中。 
+可以用字符串字面值初始化字符数组，但字符串字面值结尾处的空字符也会一起被拷贝到字符数组中。
 
 ```c++
 char a1[] = {'C', '+', '+'};        // list initialization, no null
@@ -248,7 +248,7 @@ string *p2 = nums;      // equivalent to p2 = &nums[0]
 
 ![3-8](Images/3-8.png)
 
-当使用数组作为一个`auto`变量的初始值时，推断得到的类型是指针而非数组。但`decltype`关键字不会发生这种转换，直接返回数组类型。 
+当使用数组作为一个`auto`变量的初始值时，推断得到的类型是指针而非数组。但`decltype`关键字不会发生这种转换，直接返回数组类型。
 
 ```c++
 int ia[] = {0,1,2,3,4,5,6,7,8,9};   // ia is an array of ten ints
@@ -261,7 +261,7 @@ ia3 = p;    // error: can't assign an int* to an array
 ia3[4] = i;     // ok: assigns the value of i to an element in ia3
 ```
 
-C++11在头文件*iterator*中定义了两个名为`begin`和`end`的函数，功能与容器中的两个同名成员函数类似，参数是一个数组。 
+C++11在头文件*iterator*中定义了两个名为`begin`和`end`的函数，功能与容器中的两个同名成员函数类似，参数是一个数组。
 
 ```c++
 int ia[] = {0,1,2,3,4,5,6,7,8,9};   // ia is an array of ten ints
@@ -311,7 +311,7 @@ int int_arr[] = {0, 1, 2, 3, 4, 5};
 vector<int> ivec(begin(int_arr), end(int_arr));
 ```
 
-在新版本的C++程序中应该尽量使用`vector`、`string`和迭代器，避免使用内置数组、C风格字符串和指针。 
+在新版本的C++程序中应该尽量使用`vector`、`string`和迭代器，避免使用内置数组、C风格字符串和指针。
 
 ## 多维数组（Multidimensional Arrays）
 
@@ -320,7 +320,7 @@ C++中的多维数组其实就是数组的数组。当一个数组的元素仍�
 多维数组初始化的几种方式：
 
 ```c++
-int ia[3][4] = 
+int ia[3][4] =
 {   // three elements; each element is an array of size 4
     {0, 1, 2, 3},   // initializers for the row indexed by 0
     {4, 5, 6, 7},   // initializers for the row indexed by 1
@@ -334,7 +334,7 @@ int ic[3][4] = {{ 0 }, { 4 }, { 8 }};
 int id[3][4] = {0, 3, 6, 9};
 ```
 
-可以使用下标访问多维数组的元素，数组的每个维度对应一个下标运算符。如果表达式中下标运算符的数量和数组维度一样多，则表达式的结果是给定类型的元素。如果下标运算符数量比数组维度小，则表达式的结果是给定索引处的一个内层数组。 
+可以使用下标访问多维数组的元素，数组的每个维度对应一个下标运算符。如果表达式中下标运算符的数量和数组维度一样多，则表达式的结果是给定类型的元素。如果下标运算符数量比数组维度小，则表达式的结果是给定索引处的一个内层数组。
 
 ```c++
 // assigns the first element of arr to the last element in the last row of ia
@@ -346,7 +346,7 @@ int (&row)[4] = ia[1];  // binds row to the second four-element array in ia
 
 ![3-10](Images/3-10.png)
 
-使用范围`for`语句处理多维数组时，为了避免数组被自动转换成指针，语句中的外层循环控制变量必须声明成引用类型。 
+使用范围`for`语句处理多维数组时，为了避免数组被自动转换成指针，语句中的外层循环控制变量必须声明成引用类型。
 
 ```c++
 for (const auto &row : ia)  // for every element in the outer array
@@ -354,7 +354,7 @@ for (const auto &row : ia)  // for every element in the outer array
         cout << col << endl;
 ```
 
-如果*row*不是引用类型，编译器初始化*row*时会自动将数组形式的元素转换成指向该数组内首元素的指针，这样得到的*row*就是`int*`类型，而之后的内层循环则试图在一个`int*`内遍历，程序将无法通过编译。 
+如果*row*不是引用类型，编译器初始化*row*时会自动将数组形式的元素转换成指向该数组内首元素的指针，这样得到的*row*就是`int*`类型，而之后的内层循环则试图在一个`int*`内遍历，程序将无法通过编译。
 
 ```c++
 for (auto row : ia)
@@ -371,19 +371,19 @@ int (*p)[4] = ia;   // p points to an array of four ints
 p = &ia[2];         // p now points to the last element in ia
 ```
 
-声明指向数组类型的指针时，必须带有圆括号。 
+声明指向数组类型的指针时，必须带有圆括号。
 
 ```c++
 int *ip[4];     // array of pointers to int
 int (*ip)[4];   // pointer to an array of four ints
 ```
 
-使用`auto`和`decltype`能省略复杂的指针定义。 
+使用`auto`和`decltype`能省略复杂的指针定义。
 
 ```c++
 // print the value of each element in ia, with each inner array on its own line
 // p points to an array of four ints
-for (auto p = ia; p != ia + 3; ++p) 
+for (auto p = ia; p != ia + 3; ++p)
 {
     // q points to the first element of an array of four ints; that is, q points to an int
     for (auto q = *p; q != *p + 4; ++q)

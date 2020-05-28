@@ -15,7 +15,7 @@ int fact(int val)
 }
 ```
 
-程序通过调用运算符（call operator）来执行函数。调用运算符的形式之一是一对圆括号`()`，作用于一个表达式，该表达式是函数或者指向函数的指针；圆括号内是一个用逗号隔开的实际参数（argument，简称实参）列表，用来初始化函数形参。调用表达式的类型就是函数的返回类型。 
+程序通过调用运算符（call operator）来执行函数。调用运算符的形式之一是一对圆括号`()`，作用于一个表达式，该表达式是函数或者指向函数的指针；圆括号内是一个用逗号隔开的实际参数（argument，简称实参）列表，用来初始化函数形参。调用表达式的类型就是函数的返回类型。
 
 ```c++
 int main()
@@ -45,7 +45,7 @@ void f1() { /* ... */ }      // implicit void parameter list
 void f2(void) { /* ... */ }  // explicit void parameter list
 ```
 
-形参列表中的形参通常用逗号隔开，每个形参都是含有一个声明符的声明，即使两个形参类型一样，也必须把两个类型声明都写出来。 
+形参列表中的形参通常用逗号隔开，每个形参都是含有一个声明符的声明，即使两个形参类型一样，也必须把两个类型声明都写出来。
 
 ```c++
 int f3(int v1, v2) { /* ... */ }      // error
@@ -151,7 +151,7 @@ void print(const int[10]);  // dimension for documentation purposes (at best)
 
 形参可以是数组的引用，但此时维度是形参类型的一部分，函数只能作用于指定大小的数组。
 
-将多维数组传递给函数时，数组第二维（以及后面所有维度）的大小是数组类型的一部分，不能省略。 
+将多维数组传递给函数时，数组第二维（以及后面所有维度）的大小是数组类型的一部分，不能省略。
 
 ```c++
 f(int &arr[10])     // error: declares arr as an array of references
@@ -330,7 +330,7 @@ int factorial(int val)
 返回数组指针的函数形式如下：
 
 ```c++
-Type (*function(parameter_list))[dimension]    
+Type (*function(parameter_list))[dimension]
 ```
 
 其中*Type*表示元素类型，*dimension*表示数组大小，*(\*function (parameter_list))*两端的括号必须存在。
@@ -373,7 +373,7 @@ Record lookup(Phone*);
 Record lookup(Phone* const); // redeclares Record lookup(Phone*)
 ```
 
-如果形参是某种类型的指针或引用，则通过区分其指向的对象是常量还是非常量可以实现函数重载，此时的`const`是底层的。当我们传递给重载函数一个非常量对象或者指向非常量对象的指针时，编译器会优先选用非常量版本的函数。 
+如果形参是某种类型的指针或引用，则通过区分其指向的对象是常量还是非常量可以实现函数重载，此时的`const`是底层的。当我们传递给重载函数一个非常量对象或者指向非常量对象的指针时，编译器会优先选用非常量版本的函数。
 
 ```c++
 // functions taking const and nonconst references or pointers have different parameters
@@ -384,7 +384,7 @@ Record lookup(Account*);        // new function, takes a pointer to Account
 Record lookup(const Account*);  // new function, takes a pointer to const
 ```
 
-`const_cast`可以用于函数的重载。当函数的实参不是常量时，将得到普通引用。 
+`const_cast`可以用于函数的重载。当函数的实参不是常量时，将得到普通引用。
 
 ```c++
 // return a reference to the shorter of two strings
@@ -429,7 +429,7 @@ void fooBar(int ival)
 }
 ```
 
-在C++中，名字查找发生在类型检查之前。 
+在C++中，名字查找发生在类型检查之前。
 
 ## 特殊用途语言特性（Features for Specialized Uses）
 
@@ -455,7 +455,7 @@ string screen(sz, sz, char = '*');      // error: redeclaration
 string screen(sz = 24, sz = 80, char);  // ok: adds default
 ```
 
-默认实参只能出现在函数声明和定义其中一处。通常应该在函数声明中指定默认实参，并将声明放在合适的头文件中。 
+默认实参只能出现在函数声明和定义其中一处。通常应该在函数声明中指定默认实参，并将声明放在合适的头文件中。
 
 ```c++
 // 函数声明
@@ -513,9 +513,9 @@ inline const string &horterString(const string &s1, const string &s2)
 `constexpr`函数是指能用于常量表达式的函数。`constexpr`函数的返回类型及所有形参的类型都得是字面值类型。另外C++11标准要求`constexpr`函数体中必须有且只有一条`return`语句，但是此限制在C++14标准中被删除。
 
 ```c++
-constexpr int new_sz() 
-{ 
-    return 42; 
+constexpr int new_sz()
+{
+    return 42;
 }
 
 constexpr int foo = new_sz();   // ok: foo is a constant expression
@@ -525,9 +525,9 @@ constexpr int foo = new_sz();   // ok: foo is a constant expression
 
 ```c++
 // scale(arg) is a constant expression if arg is a constant expression
-constexpr size_t scale(size_t cnt) 
-{ 
-    return new_sz() * cnt; 
+constexpr size_t scale(size_t cnt)
+{
+    return new_sz() * cnt;
 }
 
 int arr[scale(2)];  // ok: scale(2) is a constant expression
@@ -586,7 +586,7 @@ bool lengthCompare(const string &, const string &);
 bool (*pf)(const string &, const string &); // uninitialized
 ```
 
-可以直接使用指向函数的指针来调用函数，无须提前解引用指针。 
+可以直接使用指向函数的指针来调用函数，无须提前解引用指针。
 
 ```c++
 pf = lengthCompare; // pf now points to the function named lengthCompare

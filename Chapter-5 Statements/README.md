@@ -47,7 +47,7 @@ if (condition)
     statement
 ```
 
-`if-else`语句的形式： 
+`if-else`语句的形式：
 
 ```c++
 if (condition)
@@ -157,7 +157,7 @@ while (condition);
 
 ```c++
 string buf;
-while (cin >> buf && !buf.empty()) 
+while (cin >> buf && !buf.empty())
 {
     switch(buf[0])
     {
@@ -202,10 +202,10 @@ end: return; // labeled statement; may be the target of a goto
 `goto`语句的形式：
 
 ```c++
-goto label;    
+goto label;
 ```
 
-`goto`语句使程序无条件跳转到标签为*label*的语句处执行，但两者必须位于同一个函数内，同时`goto`语句也不能将程序的控制权从变量的作用域之外转移到作用域之内。 
+`goto`语句使程序无条件跳转到标签为*label*的语句处执行，但两者必须位于同一个函数内，同时`goto`语句也不能将程序的控制权从变量的作用域之外转移到作用域之内。
 
 建议不要在程序中使用`goto`语句，它使得程序既难理解又难修改。
 
@@ -228,15 +228,15 @@ goto label;
 `try`语句块的通用形式：
 
 ```c++
-try 
+try
 {
     program-statements
-} 
-catch (exception-declaration) 
+}
+catch (exception-declaration)
 {
     handler-statements
-} 
-catch (exception-declaration) 
+}
+catch (exception-declaration)
 {
     handler-statements
 } // . . .
@@ -259,7 +259,7 @@ catch (exception-declaration)
 - 头文件*new*定义了`bad_alloc`异常类。
 - 头文件*type_info*定义了`bad_cast`异常类。
 
-标准库异常类的继承体系： 
+标准库异常类的继承体系：
 
 ![5-3](Images/5-3.png)
 
